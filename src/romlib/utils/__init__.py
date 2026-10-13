@@ -1,0 +1,1 @@
+"""Small helpers: config IO, manifest parsing, ROM naming, logging."""
