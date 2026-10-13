@@ -1,0 +1,1 @@
+"""Core host: orchestration, event bus, layout engine."""
