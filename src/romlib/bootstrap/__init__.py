@@ -1,0 +1,1 @@
+"""Entry points: CLI, host boot, first-run wizard."""
