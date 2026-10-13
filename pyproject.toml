@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rom-library-organizer"
+version = "0.6.2"
+description = "Plugin-host ROM manager and organizer for Windows desktops."
+readme = "CONTRIBUTING.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "rom-library-organizer contributors" }]
+keywords = ["rom", "emulation", "library", "organizer", "plugin-host"]
+
+dependencies = [
+    "pydantic>=2.6,<3",
+    "tomli-w>=1.0",
+    "rich>=13.7",
+    "watchdog>=4.0",
+    "xxhash>=3.4",
+    "platformdirs>=4.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "mypy>=1.9",
+    "ruff>=0.4",
+    "pre-commit>=3.7",
+]
+
+[project.scripts]
+romlib = "romlib.bootstrap.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/romlib"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
