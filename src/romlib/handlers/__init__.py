@@ -1,0 +1,1 @@
+"""Hook handlers wired by the loader for each plugin."""
